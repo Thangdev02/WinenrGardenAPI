@@ -1,0 +1,6 @@
+@WinnerGardenAPI_HostAddress = http://localhost:5170
+
+GET {{WinnerGardenAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
