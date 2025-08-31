@@ -25,12 +25,9 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+// ✅ Luôn bật Swagger
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
 app.UseCors("AllowAll");
@@ -38,7 +35,7 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-// Lấy PORT từ biến môi trường (Railway sẽ tự cấp)
+// ✅ Railway sẽ cấp PORT, bạn đã làm đúng
 var port = Environment.GetEnvironmentVariable("PORT") ?? "5000";
 app.Urls.Add($"http://*:{port}");
 
