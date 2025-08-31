@@ -17,6 +17,6 @@ COPY --from=build /app .
 
 # Railway sẽ cung cấp PORT động qua env
 ENV ASPNETCORE_URLS=http://+:$PORT
-EXPOSE 5000
+EXPOSE 8080
 
 ENTRYPOINT ["dotnet", "WinnerGardenAPI.dll"]
